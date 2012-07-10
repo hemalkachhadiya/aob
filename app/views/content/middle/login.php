@@ -47,7 +47,7 @@
                 <!-- комментарий: for должен быть равен id элемента к которому относиться -->
                 <label for="inp-password">Пароль</label>
                 <input id="inp-password" type="password" name="password" class="required" value="">
-                <a href="" title="" id="PasswordRecoveryLink"><span>Забыли пароль?</span></a>
+                <!---<a href="" title="" id="PasswordRecoveryLink"><span>Забыли пароль?</span></a> 00>
             </div>
             <input type='checkbox' name="expirationTime"> Запомнить меня
             <input type="submit" name="" value="Войти">

@@ -7,7 +7,8 @@
 
                 <input type="hidden" value="<?= $TemplateData->id ?>" name="id" >
                 Заголовок :  <input name="title" value="<?= setFormValue('title',$TemplateData) ?>" style="width:100%">
-                <textarea rows="" cols="" name="body" class="ckeditor">
+
+                <textarea  cols="" name="body" class="ckeditor" >
 
                     <?
                     if ( setFormValue('body',$TemplateData))

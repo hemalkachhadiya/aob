@@ -245,7 +245,7 @@ class Main extends CI_Controller
         $data['message'] = 'Такой email уже есть в базе';
         if (!$this->SlaveModel->isSubscriberEmail($this->input->post('email'))){
             $this->SlaveModel->addSubscriberEmail($this->input->post('email'));
-            $data['message'] = 'Ваш email успешно добавлен';
+            $data['message'] = 'Вы подписаны на рассылку';
         }
         echo json_encode($data);
 

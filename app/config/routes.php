@@ -8,7 +8,7 @@ $route['404_override'] = 'main/error';
 /*$route['workshops_and_trainings']    = 'main/getSystemTemplate/workshops_and_trainings';
 $route['coaching']                   = 'main/getSystemTemplate/coaching';*/
 
-$route['page/consulting']            = 'main/index/consulting';
+//$route['page/consulting']            = 'main/getSystemTemplate/27';
 $route['page/(:any)']                = 'main/getSystemTemplate/$1';
 //$route['news/(:any)']                = 'main/getSystemTemplate/$1';
 

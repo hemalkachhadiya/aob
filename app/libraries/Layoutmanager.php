@@ -50,12 +50,22 @@ class LayoutManager
         $this->CI->load->view('main_layouts/typical/component',$ConfigData);
 
     }
+    public function setMenu(){
+        $this->CI->load->model('LayoutModel');
+        $this->TemplateData['menu'] = array(
+            'top_left'  => $this->CI->LayoutModel->getLinks('top_left'),
+            'top_right' => $this->CI->LayoutModel->getLinks('top_right'),
+            'bottom'    => $this->CI->LayoutModel->getLinks('bottom')
+        );
 
+    }
     public function getSimpleTemplate($ConfigData,$ContentData = array()){
             $this->getUserData();
+            $this->setMenu();
             $this->setComponentFolder($ConfigData);
             $ConfigData = array_merge($ConfigData,$ContentData);
             $ConfigData = array_merge($ConfigData,$this->TemplateData);
+
 
             $this->CI->load->view("main_layouts/{$this->ComponentFolder}/component",$ConfigData);
     }

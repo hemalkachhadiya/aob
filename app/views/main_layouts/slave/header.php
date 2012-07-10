@@ -54,13 +54,13 @@
         <div></div>
         <div></div>
     </div>
+
+    <? if (!empty($menu['top_right'])) : ?>
     <ul id="main-menu">
-        <li><a href="" title="">О компаниии</a></li>
-        <li><a href="" title="">Практика</a></li>
-        <li><a href="" title="">Полезное</a></li>
-        <li class="select"><a href="" title="">Новости</a></li>
-        <li><a href="" title="">Контакты</a></li>
-        <li><a href="" title="">Наши клиенты</a></li>
+        <? foreach ($menu['top_right'] as $item) : ?>
+            <li><a href="" title=""><?= $item->title ?></a></li>
+        <? endforeach ?>
     </ul>
+    <? endif; ?>
     <div class="border"></div>
 </div>
