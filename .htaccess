@@ -1,0 +1,44 @@
+AddDefaultCharset utf8
+AddType application/x-httpd-php .etf
+
+php_value upload_max_filesize 9M
+
+#DirectoryIndex index.php
+
+php_value magic_quotes_gpc 0
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteCond %{HTTP_HOST} ^pommelo.com
+    RewriteRule (.*) http://www.pommelo.com/$1 [R=301,L]
+
+	RewriteRule ^ems/?$ __ems/engine.etf?pg=invites [L]
+	RewriteRule ^ems/([-0-9a-z]+)/?$ __ems/engine.etf?pg=$1 [L]
+	RewriteRule ^ems/([-0-9a-z]+)/([-0-9a-z]+)/?$ __ems/engine.etf?pg=$1&spg=$2 [L]
+	RewriteRule ^ems/([-0-9a-z]+)/([-0-9a-z]+)/([-0-9a-z]+)/?$ __ems/engine.etf?pg=$1&spg=$2&data=$3 [L]
+	
+	RewriteCond $1 !^(index\.php|images|js|phpinfo\.php|css|assets|less|robots\.txt|import|__ems|viewmail|phpmyadmin)
+	
+	
+	RewriteCond %{REQUEST_URI} ^codeIgniter.*
+	RewriteRule ^(.*)$ /index.php?/$1 [L]
+	
+	#When your application folder isn't in the system folder
+	#This snippet prevents user access to the application folder
+	#Submitted by: Fabdrol
+	#Rename 'application' to your applications folder name.
+	RewriteCond %{REQUEST_URI} ^app.*
+	RewriteRule ^(.*)$ /index.php?/$1 [L]
+	
+	#Checks to see if the user is attempting to access a valid file,
+	#such as an image or css document, if this isn't true it sends the
+	#request to index.php
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php?/$1 [L]
+	#RewriteRule ^company/(.*)$ business/$1 [L]
+
+
+</IfModule>
