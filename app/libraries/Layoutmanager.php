@@ -55,6 +55,7 @@ class LayoutManager
         $this->TemplateData['menu'] = array(
             'top_left'  => $this->CI->LayoutModel->getLinks('top_left'),
             'top_right' => $this->CI->LayoutModel->getLinks('top_right'),
+            'top_middle' => $this->CI->LayoutModel->getLinks('top_middle'),
             'bottom'    => $this->CI->LayoutModel->getLinks('bottom')
         );
 

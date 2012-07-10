@@ -37,20 +37,27 @@
 			</div>
 <div class="content" id="lawyer-links">
 				<h4><span><span>ССЫЛКИ ДЛЯ ЮРИСТА</span></span></h4>
-				<ul>
-					<li><a href="" title="">Префектура Москвы</a></li>
-					<li><a href="" title="">Союз Адвокатов России</a></li>
-					<li><a href="" title="">Приемная Мирового Суда</a></li>
-					<li><a href="" title="">Павел Астахов рекомендует</a></li>
-					<li><a href="" title="">Библиотека Конгресса</a></li>
-					<li class="new-row"><a href="" title="">Большой юридический справочник</a></li>
-					<li><a href="" title="">Министерство Юстиции</a></li>
-					<li><a href="" title="">Налоговая инспекция по делам молодежи и юных революционеров</a></li>
-					<li><a href="" title="">Правительство РФ</a></li>
-					<li><a href="" title="">Ответы на вопросы для создающих свое дело на территории РФ</a></li>
-					<li class="new-row">&nbsp;</li>
-					<li>&nbsp;</li>
-					<li><a href="" title="">Верхняя Палата</a></li>
-					<li><a href="" title="">Фонд борьбы с коррупцией</a></li>
-				</ul>
+
+
+                <? if (!empty($menu['bottom'])) : ?>
+                   <ul >
+
+                       <?
+                       $i = 0;
+                       foreach ($menu['bottom'] as $item) :
+                            $addClass = '';
+                            $i++;
+                            if ($i == 6) {
+                                $addClass = 'class="new-row"';
+                                $i = 0;
+                            }
+
+                       ?>
+
+                           <li <?= $addClass ?> ><a href="" title=""><?= $item->title ?></a></li>
+                       <? endforeach ?>
+                   </ul>
+                <? endif; ?>
+
+
 			</div>

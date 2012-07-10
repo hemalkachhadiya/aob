@@ -34,26 +34,30 @@
                     });
     })
 </script>
-<div id="content-konsatling">
-    <? if (!$this->authmanager->isLogged()) : ?>
-        <form action="/main/login" method="POST" id="loginForm">
-            <div class="errorHolder"></div>
-            <div>
-                <!-- комментарий: for должен быть равен id элемента к которому относиться -->
-                <label for="inp-login">Эл. почта</label>
-                <input id="inp-login" type="text" name="login" class="email required" value="">
-            </div>
-            <div>
-                <!-- комментарий: for должен быть равен id элемента к которому относиться -->
-                <label for="inp-password">Пароль</label>
-                <input id="inp-password" type="password" name="password" class="required" value="">
-                <!---<a href="" title="" id="PasswordRecoveryLink"><span>Забыли пароль?</span></a> 00>
-            </div>
-            <input type='checkbox' name="expirationTime"> Запомнить меня
-            <input type="submit" name="" value="Войти">
-        </form>
-    <? else : ?>
-        <a href="/main/logout">выйти</a>
-    <? endif; ?>
 
+<div class="content" id="news-main">
+    <h1>Вход<span></span></h1>
+    <div class="news">
+        <? if (!$this->authmanager->isLogged()) : ?>
+                <form action="/main/login" method="POST" id="loginForm">
+                    <div class="errorHolder"></div>
+                    <div>
+                        <!-- комментарий: for должен быть равен id элемента к которому относиться -->
+                        <label for="inp-login">Эл. почта</label>
+                        <input id="inp-login" type="text" name="login" class="email required" value="">
+                    </div>
+                    <div>
+                        <!-- комментарий: for должен быть равен id элемента к которому относиться -->
+                        <label for="inp-password">Пароль</label>
+                        <input id="inp-password" type="password" name="password" class="required" value="">
+                        <!---<a href="" title="" id="PasswordRecoveryLink"><span>Забыли пароль?</span></a> 00> -->
+                    </div>
+                    <input type='checkbox' name="expirationTime"> Запомнить меня
+                    <input type="submit" name="" value="Войти">
+                </form>
+            <? else : ?>
+                <a href="/main/logout">выйти</a>
+            <? endif; ?>
     </div>
+
+</div>

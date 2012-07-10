@@ -131,3 +131,11 @@ function displayFileName($fileName){
         return "Выберите...";
     }
 }
+
+function setMenuLink($item){
+    if ($item->link_default){
+        return $item->link_default;
+    }else{
+        return $item->link;
+    }
+}

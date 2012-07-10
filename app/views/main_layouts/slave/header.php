@@ -37,20 +37,21 @@
 <div id="header">
     <a id="logo" href="/" title=""><img src="img/logo-0.jpg" alt="" title=""></a>
     <div id="our-services">
-        <ul>
-            <li><a href="" title="">Налоговые споры</a></li>
-            <li><a href="" title="">Взыскание задолженостей</a></li>
-            <li><a href="" title="">Сделки с недвижимостью</a></li>
-            <li><a href="" title="">Корпоративное право</a></li>
-            <li><a href="" title="">Готовые ЗАО</a></li>
-        </ul>
-        <ul>
-            <li><a href="" title="">Перерегистрация ООО</a></li>
-            <li><a href="" title="">Страховые споры</a></li>
-            <li><a href="" title="">Представительство в арбитражном суде</a></li>
-            <li><a href="" title="">Строительно-инвестиционная деятельность</a></li>
-            <li><a href="" title="">Иные юридические услуги</a></li>
-        </ul>
+        <? if (!empty($menu['top_left'])) : ?>
+            <ul >
+                <? foreach ($menu['top_left'] as $item) : ?>
+                    <li><a href="" title=""><?= $item->title ?></a></li>
+                <? endforeach ?>
+            </ul>
+        <? endif; ?>
+        <? if (!empty($menu['top_middle'])) : ?>
+            <ul >
+                <? foreach ($menu['top_middle'] as $item) : ?>
+                    <li><a href="" title=""><?= $item->title ?></a></li>
+                <? endforeach ?>
+            </ul>
+        <? endif; ?>
+
         <div></div>
         <div></div>
     </div>
@@ -58,7 +59,7 @@
     <? if (!empty($menu['top_right'])) : ?>
     <ul id="main-menu">
         <? foreach ($menu['top_right'] as $item) : ?>
-            <li><a href="" title=""><?= $item->title ?></a></li>
+            <li><a href="<?= setMenuLink($item) ?>" title=""><?= $item->title ?></a></li>
         <? endforeach ?>
     </ul>
     <? endif; ?>
