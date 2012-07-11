@@ -1015,4 +1015,10 @@ class Users extends CI_Model {
             $this->db->delete('department_portfolio');
         }
     }
+    public function changePassword($password){
+        $this->db->where('id',$this->session->userdata('UserID'));
+        $this->db->update('users',array(
+            'password'  => md5($password)
+        ));
+    }
 }

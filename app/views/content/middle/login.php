@@ -56,8 +56,36 @@
                     <input type="submit" name="" value="Войти">
                 </form>
             <? else : ?>
-                <a href="/main/logout">выйти</a>
-            <? endif; ?>
+                    <p>
+                        <a href="/pages">Статические страницы</a>
+                    </p>
+                    <p>
+                        <a href="/menu">Ссылки для меню</a>
+                    </p>
+                    <p>
+                        <a href="/main/logout">выйти</a>
+                    </p>
+                    <p>
+                        <?
+                            if ($this->session->userdata('ChangePassword')) :
+                                echo $this->session->userdata('ChangePassword');
+                                $this->session->unset_userdata('ChangePassword');
+                            endif;
+                        ?>
+                        <form id="ChangePasswordForm" method="post" action="/main/changePassword">
+
+                            <div>
+                                <!-- комментарий: for должен быть равен id элемента к которому относиться -->
+                                <label for="inp-password">Пароль</label>
+                                <input id="inp-password" type="text" name="password" class="required" value="">
+                                <input type="submit" value="Поменять пароль">
+                            </div>
+
+                        </form>
+
+                    </p>
+
+                <? endif; ?>
     </div>
 
 </div>

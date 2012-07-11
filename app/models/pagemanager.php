@@ -10,7 +10,8 @@ class PageManager extends CI_Model{
                         page_list.link,
                         page_list.picture,
                         page_list.createTime,
-                        page_list.additional_info
+                        page_list.additional_info,
+                        page_list.template,
                 ');
     }
     public function get($entityType,$page = false){
@@ -76,9 +77,7 @@ class PageManager extends CI_Model{
     }
     public function get_index(){
         return array(
-            'RandomReview'  => $this->get_random('review'),
-            'RandomBook'    => $this->get_random('books'),
-            'RandomNews'    => $this->get_random('news')
+            'RandomUsefulList'  => $this->get_random('page')
         );
     }
     /** never used */
@@ -131,6 +130,22 @@ class PageManager extends CI_Model{
         $this->db->order_by('createTime','DESC');
         $query = $this->db->get();
         return $query->row();
+    }
+    public function get_page(){
+        return array(
+                            'list' =>  $this->get('page')
+                );
+    }
+
+    public function isTemplate($template){
+        $this->db->get_where('page_list',array(
+            'template'  => $template
+        ));
+        if ($this->db->affected_rows()>0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

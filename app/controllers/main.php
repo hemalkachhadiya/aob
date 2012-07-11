@@ -10,6 +10,19 @@ class Main extends CI_Controller
         $this->load->model('PageManager');
         $this->load->model('Users');
     }
+    public function changePassword(){
+            $password = $this->input->post('password');
+            if (!empty($password)){
+                $this->Users->changePassword($password);
+                $this->session->set_userdata('ChangePassword','Пароль успешно сменен');
+            }
+            $this->index('login');
+        }
+    public function editMenu(){
+        $this->load->model('LayoutModel');
+        $this->LayoutModel->editMenu();
+        redirect('menu');
+    }
     /*
     public function index()
     {
@@ -274,8 +287,12 @@ class Main extends CI_Controller
         $this->layoutmanager->getSimpleTemplate($ConfigData,$data);*/
         $this->getUserCompositeTemplate($template);
     }
-    public function getSystemTemplate($template){
+    public function getSystemTemplate($template,$menu = false){
         $this->setFormTemplator('editTemplate');
+
+        if ($menu and !$this->PageManager->isTemplate($template)){
+            redirect('main/error');
+        }
         $data = array(
             'ActiveTemplate'    => $template,
             'TemplateData'      => $this->PageManager->getSystemTemplate($template)
@@ -287,6 +304,7 @@ class Main extends CI_Controller
         $this->layoutmanager->getSimpleTemplate($ConfigData,$data);
     }
     public function getUserCompositeTemplate($template){
+
         $this->setFormTemplator('editTemplate');
         $method = "get_$template";
         $data = array(

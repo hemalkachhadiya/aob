@@ -139,3 +139,11 @@ function setMenuLink($item){
         return $item->link;
     }
 }
+function generaetPageLink($item){
+    if ($item->template){
+        return "/page/{$item->template}";
+    }else{
+        return "/page?id={$item->id}";
+    }
+
+}

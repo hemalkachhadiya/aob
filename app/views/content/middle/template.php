@@ -6,7 +6,9 @@
         <?= validation_errors('<div class="error">','</div>') ?>
         <div>
         <form method="post" action="<?= $_SERVER["REQUEST_URI"]; ?>" enctype="multipart/form-data">
-
+                <? if ($TemplateData->typeName == 'page') : ?>
+                    Линк : <input type="text" value="<?= setFormValue('template',$TemplateData) ?>" name="template" style="width:100%">
+                <? endif; ?>
                 <input type="hidden" value="<?= $TemplateData->id ?>" name="id" >
                 Заголовок :  <input name="title" value="<?= setFormValue('title',$TemplateData) ?>" style="width:100%">
 
@@ -51,6 +53,7 @@
                 </p>
 
         </form>
+            <a href="/main/delete/<?= $TemplateData->id ?>?redirect=" style="color:red">удалить</a>
         </div>
     <? else : ?>
 

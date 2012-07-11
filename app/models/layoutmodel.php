@@ -11,6 +11,12 @@
             $query = $this->db->get();
             return $query->result();
         }
+        public function editMenu(){
+            $this->db->where('id',$this->input->post('id'));
+            $this->db->update('menu',array(
+                'link'  =>  $this->input->post('link')
+            ));
+        }
         private function setMainSelect(){
             $this->db->select('
                             menu_types.title as typeName,
