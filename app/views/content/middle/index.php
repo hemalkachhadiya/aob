@@ -1,16 +1,13 @@
+<script src="/js/NewsLoader.js" ></script>
 <div class="content" id="news-main">
 				<h1>Новости<span></span></h1>
-				<div class="news">
-					<a href="" title="">Федеральный закон от 5 июня 2012 г. №61-ФЗ «О внесении изменения в статью 26 Федерального закона “О государственной регистрации прав на недвижимое имущество и сделок с ним“»</a>
-					<p>Участки недр не сдаются в аренду!</p>
-					<span>18.05.2012</span>
-				</div>
-				<div class="news">
-					<a href="" title="">Постановление Правительства РФ от 1 июня 2012 г. №543 «Об утверждении перечня документов, по которым взыскание задолженности производится в бесспорном порядке на основании исполнительных надписей»</a>
-					<p>По каким документам задолженность взыскивается в бесспорном порядке на основании исполнительных надписей?</p>
-					<span>18.05.2012</span>
-				</div>
-				<a class="button" href="" title="">Загрузить еще</a>
+
+                <span id="NewsContainer">
+
+                </span>
+
+
+				<a class="button" href="" title="" id="MoreNews" page="1">Загрузить еще</a>
 			</div>
 <div class="content" id="helpful">
 				<h2>Полезная информация</h2>
@@ -43,19 +40,17 @@
                    <ul >
 
                        <?
-                       $i = 0;
-                       foreach ($menu['bottom'] as $item) :
-                            $addClass = '';
-                            $i++;
-                            if ($i == 6) {
-                                $addClass = 'class="new-row"';
-                                $i = 0;
-                            }
 
+                       for ($i = 0 ; $i < count($menu['bottom'] );$i++ ) {
+                            $addClass = '';
+                            if ($i % 5 == 0) {
+                                $addClass = 'class="new-row"';
+                            }
+                           $item = $menu['bottom'][$i];
                        ?>
 
                            <li <?= $addClass ?> ><a href="" title=""><?= $item->title ?></a></li>
-                       <? endforeach ?>
+                       <? } ?>
                    </ul>
                 <? endif; ?>
 

@@ -250,6 +250,20 @@ class Main extends CI_Controller
         echo json_encode($data);
 
     }
+    public function send_contact_us(){
+        $data = array();
+        $this->load->library('email');
+        $this->email->from($this->input->post('email'), 'Пользователь');
+        $this->email->to('Inarts@mail.ru');
+        $this->email->subject(base_url().'. Обратная связь');
+        $this->email->message($this->input->post('content'));
+        if ($this->email->send()){
+            $data['message'] = "Сообщение успешно отправлено";
+        }else{
+            $data['message'] = "Сообщение не было отправлено -  попробуйте ещё раз позже.";
+        }
+        echo json_encode($data);
+    }
     public function index($template = 'index'){
         /*$data = array(
             'ActiveTemplate'    => $template,
@@ -271,7 +285,6 @@ class Main extends CI_Controller
         $ConfigData = array("ContentTemplate" => "middle/template");
 
         $this->layoutmanager->getSimpleTemplate($ConfigData,$data);
-
     }
     public function getUserCompositeTemplate($template){
         $this->setFormTemplator('editTemplate');
@@ -315,6 +328,14 @@ class Main extends CI_Controller
         $ConfigData = array("ContentTemplate" => "middle/template");
 
         $this->layoutmanager->getSimpleTemplate($ConfigData,$data);
+    }
+    public function getAjaxNewsList(){
+        $page = $this->input->post('page');
+        $data = array(
+            'list'      =>  $this->PageManager->get('news',$page),
+            'isMore'    =>  $this->PageManager->get('news',++$page)
+        );
+        echo json_encode($data);
     }
 
 }

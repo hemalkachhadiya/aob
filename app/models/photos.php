@@ -91,7 +91,7 @@ class Photos extends CI_Model{
         $result['status'] = false;
         if (!$this->upload->do_upload()){
             $msg = $this->upload->display_errors('', '');
-            echo $msg;
+            //echo $msg;
 
         }
         else {

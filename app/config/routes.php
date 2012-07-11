@@ -10,6 +10,7 @@ $route['coaching']                   = 'main/getSystemTemplate/coaching';*/
 
 //$route['page/consulting']            = 'main/getSystemTemplate/27';
 $route['page/(:any)']                = 'main/getSystemTemplate/$1';
+
 //$route['news/(:any)']                = 'main/getSystemTemplate/$1';
 
 $route['template']                   = 'main/getSystemTemplate/template';

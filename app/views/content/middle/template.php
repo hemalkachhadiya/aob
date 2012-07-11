@@ -1,4 +1,6 @@
-<div id="content-konsatling">
+
+
+<div class="content" id="article">
     <? if ($this->authmanager->isAdmin()) : ?>
         <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
         <?= validation_errors('<div class="error">','</div>') ?>
@@ -55,20 +57,18 @@
 
 
 
-    <article id="article">
-        <article class="article-block">
-            <header class="header-h1">
-                <h1><?= $TemplateData->title ?></h1>
-            </header>
 
-        </article>
+                <h1><?= $TemplateData->title ?></h1>
+
+
+
         <? if (!empty($TemplateData->body)) :  ?>
             <?= $TemplateData->body ?>
         <? else: ?>
             <?= $this->load->view('content/middle/default_template') ?>
         <? endif; ?>
 
-    </article>
+
 
     <? endif; ?>
 </div>

@@ -41,6 +41,7 @@ define ('WIDGET_AMOUNT',5);
 define ('SEARCH_RESULTS',10);
 define ('SHOP_SEARCH_RESULTS',9);
 define ('CARROUSEL_RESULTS',4);
+define ('NEWS_RESULTS',2);
 define ('FREE_WEEK_OFFER_AMOUNT',10);
 define ('FREE_WEEK_PROJECT_AMOUNT',5);
 

@@ -13,14 +13,26 @@ class PageManager extends CI_Model{
                         page_list.additional_info
                 ');
     }
-    public function get($entityType){
+    public function get($entityType,$page = false){
         $this->setMainSelect();
         $this->db->from('page_list');
         $this->db->join('types','types.id = page_list.type');
         $this->db->where('types.name',$entityType);
         $this->db->order_by('createTime','DESC');
+        if (!empty($page)) :
+            $this->db->limit(NEWS_RESULTS, ($page-1)*NEWS_RESULTS);
+        endif;
         $query = $this->db->get();
-        return $query->result();
+        if ($this->db->affected_rows() > 0){
+            $list = $query->result();
+            foreach ($list as $item):
+                $item->shortBody    = smarty_modifier_mb_truncate(trim($item->body),250,'...',false,'UTF-8',false );
+                $item->createTime   = setDate($item->createTime);
+            endforeach;
+            return $list;
+        }
+        else
+            return false;
     }
     public function getSystemTemplate($template){
         $this->setMainSelect();
