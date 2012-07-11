@@ -3,11 +3,11 @@
         <a href="mailto:mailbox@attorneyofbusiness.ru" title="">mailbox@attorneyofbusiness.ru</a><br>
         119602, г. Москва, улица Покрышкина, домовладение 8
     </p>
-    <form>
+    <form action="/search" method="post">
         <div class="input-text">
             <div></div>
             <div></div>
-            <input type="text" name="" placeholder="поиск" value="">
+            <input type="text" name="search" placeholder="поиск" value="">
         </div>
         <input type="submit" name="" value="">
     </form>
