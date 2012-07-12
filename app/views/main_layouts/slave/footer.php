@@ -13,7 +13,7 @@
     </form>
     <p id="made-by">
         <span>Сделано в</span>
-        <a href="//incredibleart.ru/ru/portfolio" title=""><img src="img/incredible-1.png" title=""></a>
+        <a href="//incredibleart.ru/ru/portfolio" title=""><img src="img/incredible-2.png" title=""></a>
         <a href="//incredibleart.ru/ru/portfolio" title="">Incredible Artstudio</a></p>
     <p></p>
     <div class="border"></div>

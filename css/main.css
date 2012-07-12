@@ -219,11 +219,11 @@ box-shadow:0 1px 2px #e2e2e2;
 
 #made-by {position:absolute;left:470px;top:190px;}
 #made-by:hover {left:410px;}
-#made-by:hover span, #made-by a, #made-by:hover span + a + a {display:block;height:24px;float:left;text-decoration:underline;font-size:8.25pt;color:#8f7474;}
-#made-by span, #made-by span + a + a {line-height:1.9;}
+#made-by:hover span, #made-by a, #made-by:hover span + a + a {display:block;height:30px;float:left;text-decoration:underline;font-size:8.25pt;color:#8f7474;}
+#made-by span, #made-by span + a + a {line-height:2.4;}
 #made-by span {display:none;width:60px;}
-#made-by span + a {width:30px;overflow:hidden;}
-#made-by:hover span + a img {margin:-23px 0 0;}
+#made-by span + a {width:37px;overflow:hidden;}
+#made-by:hover span + a img {margin:-28px 0 0;}
 #made-by span + a + a {display:none;margin:0 0 0 5px;}
 
 #footer .border {width:315px;height:5px;position:absolute;left:342px;top:0;background:url(../img/footer-1.png) left top repeat-x;}
