@@ -32,7 +32,7 @@ h1 > span {display:block;width:100%;position:absolute;left:0;bottom:0;border-sty
 h2 {margin:0 0 10px 25px;font-size:24pt;}
 h4 {font-size:10.5pt;color:#474747;}
 
-h1, h2, h4, .news > a, .news > span, .button, #block-about p, .info-block > a, .info-block > span, #body404 {font-family:"Minion Pro", sans-serif;}
+h1, h2, h4, .news > a, .news > span, .button, #block-about p, .info-block > a, .info-block > span, #body404, #our-services .select a {font-family:"Minion Pro", sans-serif;}
 .input-text input {font-family:Tahoma, sans-serif;}
 #our-services a {font-family:HeliosLight, sans-serif;}
 #main-menu a {font-family:PTSerif, sans-serif;}
@@ -94,6 +94,7 @@ box-shadow:0 4px 13px #d8d3d3;
 #our-services ul:first-child {width:200px;margin-left:30px;}
 
 #our-services a {line-height:1.9;font-size:9.75pt;}
+#our-services .select a {text-decoration:none;font-style:italic;font-size:12pt;line-height:1.5;}
 
 #main-menu {position:absolute;left:830px;top:39px;}
 #main-menu li, #main-menu a {display:block;height:24px;}
@@ -105,7 +106,7 @@ box-shadow:inset 0 1px 0 #d0cbc5;
 -moz-box-shadow:inset 0 1px 0 #d0cbc5;
 -webkit-box-shadow:inset 0 1px 0 #d0cbc5;
 }
-#main-menu .select a {box-shadow:inset 0 -1px 0 #f2f2f2;}
+#main-menu .select a {text-decoration:none;font-weight:bold;box-shadow:inset 0 -1px 0 #f2f2f2;}
 
 #header .border {width:910px;height:0;border-bottom:dotted 1px #848484;position:absolute;left:45px;bottom:0;}
 
