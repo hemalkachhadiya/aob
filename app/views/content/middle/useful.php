@@ -7,5 +7,5 @@
 
         <span id="NewsContainer">
         </span>
-    <a class="button" href="" title="" id="MoreNews" type="useful" page="1">Загрузить еще</a>
+    <a class="button" href="" title="" amount="5" id="MoreNews" type="useful" page="1">Загрузить еще</a>
 </div>

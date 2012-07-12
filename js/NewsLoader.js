@@ -1,12 +1,14 @@
 $(document).ready(function(){
     function loadItems(page){
         var ItemType = $('#MoreNews').attr('type');
+        var amount = $('#MoreNews').attr('amount');
         $.ajax({
                 url: '/main/getAjaxNewsList',
                 type : 'POST',
                 data :{
                         page : page,
-                    ItemType : ItemType
+                    ItemType : ItemType,
+                    amount   : amount
                       },
                 success  : function(data){
                             var container = $('#NewsContainer');

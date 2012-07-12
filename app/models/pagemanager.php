@@ -34,7 +34,13 @@ class PageManager extends CI_Model{
         }
 
         if (!empty($page)) :
-            $this->db->limit(NEWS_RESULTS, ($page-1)*NEWS_RESULTS);
+            //specially for ajax items loading and no more else
+            if ($this->input->post('amount')){
+                $amount = $this->input->post('amount');
+            }else{
+                $amount = NEWS_RESULTS;
+            }
+            $this->db->limit($amount , ($page-1)*$amount );
         endif;
         $query = $this->db->get();
         if ($this->db->affected_rows() > 0){
