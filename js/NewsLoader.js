@@ -41,7 +41,7 @@ $(document).ready(function(){
         var template = '<div class="news">'
                             +'<a href="'+entity.link+'" title="">'+entity.title+'</a>'
                             +'<p>'+entity.shortBody+'</p>'
-                            +'<span>'+entity.createTime+'</span>'
+                            +'<span class="date">'+entity.createTime+'</span>'
                         +'</div>';
         return template;
     }
