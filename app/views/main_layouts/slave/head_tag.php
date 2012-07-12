@@ -1,4 +1,14 @@
 <head>
+    <? if (!empty($metaTags)){ ?>
+      <title>
+          Attorney of business -
+          <?= $metaTags->title ?>
+      </title>
+
+    <? } else{  ?>
+        <title>Attorney of business</title>
+    <? } ?>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="utf-8">
     <meta name="description" content="A description about your site">
@@ -14,6 +24,7 @@
     <link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,700&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
 
     <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/style_additional.css">
    	<link rel="shortcut icon" href="/img/favicon.ico">
 </head>
 

@@ -1,10 +1,12 @@
 $(document).ready(function(){
     function loadItems(page){
+        var ItemType = $('#MoreNews').attr('type');
         $.ajax({
                 url: '/main/getAjaxNewsList',
                 type : 'POST',
                 data :{
-                        page : page
+                        page : page,
+                    ItemType : ItemType
                       },
                 success  : function(data){
                             var container = $('#NewsContainer');
@@ -37,11 +39,12 @@ $(document).ready(function(){
     function getTemplate(entity){
 
         var template = '<div class="news">'
-                            +'<a href="/news_item?id='+entity.id+'" title="">'+entity.title+'</a>'
+                            +'<a href="'+entity.link+'" title="">'+entity.title+'</a>'
                             +'<p>'+entity.shortBody+'</p>'
                             +'<span>'+entity.createTime+'</span>'
                         +'</div>';
         return template;
     }
+
 
 })

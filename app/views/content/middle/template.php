@@ -6,9 +6,9 @@
         <?= validation_errors('<div class="error">','</div>') ?>
         <div>
         <form method="post" action="<?= $_SERVER["REQUEST_URI"]; ?>" enctype="multipart/form-data">
-                <? if ($TemplateData->typeName == 'page') : ?>
-                    Линк : <input type="text" value="<?= setFormValue('template',$TemplateData) ?>" name="template" style="width:100%">
-                <? endif; ?>
+
+                    Линк : /page/<input type="text" value="<?= setFormValue('template',$TemplateData) ?>" name="template" style="width:100%">
+
                 <input type="hidden" value="<?= $TemplateData->id ?>" name="id" >
                 Заголовок :  <input name="title" value="<?= setFormValue('title',$TemplateData) ?>" style="width:100%">
 
@@ -21,32 +21,20 @@
                         $this->load->view('content/middle/default_template');
                     ?>
                 </textarea>
+                <? if ($TemplateData->typeName == 'useful') : ?>
+                    <br>
+                    на главной
+                        <select name="published">
+                            <option value="0">не публиковать</option>
+                            <option value="1" <? if ($TemplateData->published) : ?>selected <? endif; ?>>публиковать</option>
+                        </select>
 
-                <? if(!empty($WideRights)) : ?>
-                    <? if ($TemplateData->typeName == 'books') : ?>
-                        Сcылка :
-                        <input name="link" type="text" value="<?= setFormValue('link',$TemplateData) ?>" style="width:100%">
-                    <? endif; ?>
 
-                    <? if ($TemplateData->typeName == 'books'
-                            || $TemplateData->typeName == 'review') : ?>
-                        Картинка :
-                        <input name="userfile"  type="file" style="width:100%">
-                        <input name="photo_template"  type="hidden" value="<?= $TemplateData->typeName ?>" >
-                        <?  if ($TemplateData->picture) { ?>
-                            <img src="/images_content/<?= $TemplateData->typeName ?>/small/<?= $TemplateData->picture ?>" >
-                        <? }?>
-                            
-                    <? endif; ?>
-
-                    <? if ($TemplateData->typeName == 'review') : ?>
-                        <br>
-                        Дополнительная информация :
-                        <input name="picture"  type="text" value="<?= setFormValue('additional_info',$TemplateData) ?>"  style="width:100%">
-                    <? endif; ?>
 
 
                 <? endif; ?>
+
+
 
                 <p>
                     <input type="submit" value="сохранить">

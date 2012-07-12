@@ -297,6 +297,10 @@ class Main extends CI_Controller
             'ActiveTemplate'    => $template,
             'TemplateData'      => $this->PageManager->getSystemTemplate($template)
         );
+        if (!empty($data['TemplateData']->title)){
+            $data['metaTags']->title = $data['TemplateData']->title;
+        }
+
 
         $data = array_merge($data,$this->TemplateData);
         $ConfigData = array("ContentTemplate" => "middle/template");
@@ -314,6 +318,14 @@ class Main extends CI_Controller
         if ($template == 'news_item'){
             $template = 'template';
         }
+
+        $tmp = $this->PageManager->getSystemTemplate($template);
+        if(!empty($tmp->title)){
+            $data['metaTags']->title = $tmp->title;
+        }
+
+
+
         $data = array_merge($data,$this->TemplateData);
         $ConfigData = array("ContentTemplate" => "middle/{$template}");
         $this->layoutmanager->getSimpleTemplate($ConfigData,$data);
@@ -349,9 +361,10 @@ class Main extends CI_Controller
     }
     public function getAjaxNewsList(){
         $page = $this->input->post('page');
+        $type = $this->input->post('ItemType');
         $data = array(
-            'list'      =>  $this->PageManager->get('news',$page),
-            'isMore'    =>  $this->PageManager->get('news',++$page)
+            'list'      =>  $this->PageManager->get($type,$page),
+            'isMore'    =>  $this->PageManager->get($type,++$page)
         );
         echo json_encode($data);
     }

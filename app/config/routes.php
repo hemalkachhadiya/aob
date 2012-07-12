@@ -23,9 +23,10 @@ $route['pages']                      = 'main/getUserCompositeTemplate/page';
 $route['contact_us']                 = 'main/getUserCompositeTemplate/contact_us';
 $route['news']                       = 'main/getUserCompositeTemplate/news';
 $route['search']                       = 'main/getUserCompositeTemplate/search';
+$route['useful']                            = 'main/getUserCompositeTemplate/useful';
 
 $route['about_company']                     = 'main/getSystemTemplate/about_company/1';
-$route['useful']                            = 'main/getSystemTemplate/useful/1';
+
 $route['practice']                          = 'main/getSystemTemplate/practice/1';
 $route['our_clients']                       = 'main/getSystemTemplate/our_clients/1';
 

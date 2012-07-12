@@ -36,9 +36,12 @@
 </script>
 
 <div class="content" id="news-main">
-    <h1>Вход<span></span></h1>
+    <? if (!$this->authmanager->isLogged()) : ?>
+        <h1>Вход<span></span></h1>
+    <? endif; ?>
     <div class="news">
         <? if (!$this->authmanager->isLogged()) : ?>
+
                 <form action="/main/login" method="POST" id="loginForm">
                     <div class="errorHolder"></div>
                     <div>
@@ -56,15 +59,7 @@
                     <input type="submit" name="" value="Войти">
                 </form>
             <? else : ?>
-                    <p>
-                        <a href="/pages">Статические страницы</a>
-                    </p>
-                    <p>
-                        <a href="/menu">Ссылки для меню</a>
-                    </p>
-                    <p>
-                        <a href="/main/logout">выйти</a>
-                    </p>
+
                     <p>
                         <?
                             if ($this->session->userdata('ChangePassword')) :

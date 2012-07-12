@@ -5,6 +5,7 @@ class PageManager extends CI_Model{
         $this->db->select('
                         types.name as typeName,
                         page_list.id,
+                        page_list.published,
                         page_list.title,
                         page_list.body,
                         page_list.link,
@@ -14,7 +15,7 @@ class PageManager extends CI_Model{
                         page_list.template,
                 ');
     }
-    public function get($entityType,$page = false,$search=false){
+    public function get($entityType,$page = false,$search=false,$addConfig = false){
         $this->setMainSelect();
         $this->db->from('page_list');
         $this->db->join('types','types.id = page_list.type');
@@ -28,6 +29,10 @@ class PageManager extends CI_Model{
             $this->db->where('types.name',$entityType);
         endif;
 
+        if ($addConfig) {
+            $this->db->where($addConfig);
+        }
+
         if (!empty($page)) :
             $this->db->limit(NEWS_RESULTS, ($page-1)*NEWS_RESULTS);
         endif;
@@ -37,6 +42,10 @@ class PageManager extends CI_Model{
             foreach ($list as $item):
                 $item->shortBody    = smarty_modifier_mb_truncate(trim($item->body),250,'...',false,'UTF-8',false );
                 $item->createTime   = setDate($item->createTime);
+                if($item->template)
+                    $item->link = "/page/{$item->template}";
+                else
+                    $item->link = "/page?id={$item->id}";
             endforeach;
             return $list;
         }
@@ -52,7 +61,10 @@ class PageManager extends CI_Model{
         return $query->row();
     }
     public function get_news_item(){
-        return $this->getItem($this->input->get('id'));
+        if (!$this->input->get('id'))
+            redirect('main/error');
+        else
+            return $this->getItem($this->input->get('id'));
     }
     public function get_reviews(){
         return array(
@@ -73,8 +85,8 @@ class PageManager extends CI_Model{
     public function get_contact_us(){
 
     }
-    public function get_random($template){
-        $data = $this->get($template);
+    public function get_random($template,$addConfig = false){
+        $data = $this->get($template,false,false,$addConfig);
         if (!empty($data)){
             shuffle ($data);
             return $data;
@@ -85,7 +97,7 @@ class PageManager extends CI_Model{
     }
     public function get_index(){
         return array(
-            'RandomUsefulList'  => $this->get_random('page')
+            'RandomUsefulList'  => $this->get_random('useful',array("published" => 1))
         );
     }
     /** never used */
@@ -144,7 +156,10 @@ class PageManager extends CI_Model{
                             'list' =>  $this->get('page')
                 );
     }
+    public function get_menu(){}
+    public function get_useful() {
 
+    }
     public function isTemplate($template){
         $this->db->get_where('page_list',array(
             'template'  => $template

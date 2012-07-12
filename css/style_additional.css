@@ -1,0 +1,16 @@
+﻿.AdminBlock {
+    border-width: thin; width: 100%; position: absolute; top: 0px; left: 0px; text-align: right;
+    z-index: 100;
+}
+.AdminBlock p{
+    padding-right   : 100px;
+    font-weight     : bold;
+}
+a.LogoutLink{
+    color : red;
+}
+.EditStaticPageBlock{
+    font-weight: normal;
+    display: block;
+    font-size: 10pt;
+}

@@ -5,9 +5,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'kpi';
-$db['default']['password'] = 'pocket';
-$db['default']['database'] = 'kpi';
+$db['default']['username'] = 'aob';
+$db['default']['password'] = 'aob';
+$db['default']['database'] = 'aob';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
