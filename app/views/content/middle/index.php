@@ -1,6 +1,6 @@
 <script src="/js/NewsLoader.js" ></script>
 <div class="content" id="news-main">
-				<h1>Новости<span></span></h1>
+				<h1><a href="news">Новости</a><span></span></h1>
 
                 <span id="NewsContainer">
 
@@ -10,7 +10,7 @@
 				<a class="button" href="" title="" id="MoreNews"  type="news"  page="1">Загрузить еще</a>
 			</div>
 <div class="content" id="helpful">
-				<h2>Полезная информация</h2>
+				<h2><a href="/useful">Полезная информация</a></h2>
 
                 <?  $newsListAmount = count($TemplateData['RandomUsefulList']);
                     if ($newsListAmount > 3 ){
