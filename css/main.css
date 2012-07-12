@@ -66,7 +66,7 @@ border-radius:7px;
 -moz-border-radius:7px;
 -webkit-border-radius:7px;
 }
-.button, input[type="text"], textarea {
+.button, input[type="text"], textarea, input[type="password"] {
 border-radius:9px;
 -moz-border-radius:9px;
 -webkit-border-radius:9px;
@@ -169,7 +169,19 @@ box-shadow:0 1px 2px #e2e2e2;
 #article p {margin-bottom:30px;line-height:2;}
 
 /* соц сети */
-#network {width:402px;height:62px;margin:0 auto 30px;background:url(../img/bg-6.png) left top no-repeat;}
+#network, #network > div, #network > div > div{height:62px;}
+#network {float:left;margin:0 0 30px 50%;}
+#network > div {float:left;margin:0 0 0 -50%;position:relative;overflow:hidden;min-width:406px;}
+#network > div > div  {z-index:0;position:absolute;top:0;}
+#network > div > div:first-child {z-index:1;position:relative;}
+#nw-l, #nw-с, #nw-r {background:url(../img/bg-6.png) left top no-repeat;}
+#nw-l, #nw-r {width:38px;}
+#nw-l {left:0;background-position:left top;}
+#nw-с {left:50%;width:329px;margin:0 0 0 -165px;background-position:-38px top;}
+#nw-r {right:0;background-position:right top;}
+#nw-l1, #nw-r1 {background:url(../img/bg-7.png) left 3px repeat-x;}
+#nw-l1 {left:38px;right:50%;margin:0 165px 0 0;}
+#nw-r1 {left:50%;right:38px;margin:0 0 0 164px;}
 
 /* контакты */
 #contact p {width:570px;margin:0 auto;}
@@ -186,15 +198,20 @@ box-shadow:0 1px 2px #e2e2e2;
 
 #contact form {position:relative;}
 
-.errorHolder {min-height:22px;position:absolute;left:50%;top:23px;padding:0 5px;background:#979797;line-height:2;font-size:8.25pt;color:#ffffff;}
+.errorHolder {display:none;min-height:22px;position:absolute;left:50%;top:23px;padding:0 5px;background:#979797;line-height:2;font-size:8.25pt;color:#ffffff;}
 
-#contact input[type="text"], #contact textarea {width:555px;padding:0 15px;margin:10px auto 0;background:#ffffff;font-size:12pt;color:#9b9b9b;box-shadow:inset 1px 1px 0 #d9d7d7;}
-#contact input[type="text"]::-webkit-input-placeholder, #contact textarea::-webkit-input-placeholder  {color:#b7b6b6;}
-#contact input[type="text"]:-moz-placeholder, #contact textarea:-moz-placeholder {color:#b7b6b6;}
+#contact input[type="text"], #contact textarea, #loginForm input[type="text"], #loginForm input[type="password"] {display:block;width:555px;padding:0 15px;margin:10px auto 0;background:#ffffff;font-size:12pt;color:#9b9b9b;box-shadow:inset 1px 1px 0 #d9d7d7;}
+#contact input[type="text"]::-webkit-input-placeholder, #contact textarea::-webkit-input-placeholder, #loginForm input[type="text"]::-webkit-input-placeholder, #loginForm input[type="password"]::-webkit-input-placeholder {color:#b7b6b6;}
+#contact input[type="text"]:-moz-placeholder, #contact textarea:-moz-placeholder, #loginForm input[type="text"]:-moz-placeholder, #loginForm input[type="password"]:-moz-placeholder {color:#b7b6b6;}
 
-#contact input[type="text"] {height:46px;}
+#contact input[type="text"], #loginForm input[type="text"], #loginForm input[type="password"] {height:46px;}
 #contact textarea {height:280px;padding-top:10px;padding-bottom:10px;margin-bottom:20px;resize:none;font-family:Arial, sans-serif;}
 
+#loginForm {margin-bottom:30px;}
+#loginForm > div {overflow:hidden;position:relative;text-align:center;}
+
+#remember-me {margin:20px 5px 20px 0;}
+label[for="remember-me"] {color:#949494;}
 
 
 /* подвал */

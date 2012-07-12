@@ -39,24 +39,27 @@
     <? if (!$this->authmanager->isLogged()) : ?>
         <h1>Вход<span></span></h1>
     <? endif; ?>
-    <div class="news">
+    <div class="login-form">
         <? if (!$this->authmanager->isLogged()) : ?>
 
                 <form action="/main/login" method="POST" id="loginForm">
-                    <div class="errorHolder"></div>
                     <div>
-                        <!-- комментарий: for должен быть равен id элемента к которому относиться -->
-                        <label for="inp-login">Эл. почта</label>
-                        <input id="inp-login" type="text" name="login" class="email required" value="">
+                        <!-- комментарий: for должен быть равен id элемента к которому относиться 
+                        <label for="inp-login">Эл. почта</label>-->
+                        <input id="inp-login" type="text" name="login" class="email required" placeholder="Эл. почта" value="">
+						<div class="errorHolder"></div>
                     </div>
                     <div>
-                        <!-- комментарий: for должен быть равен id элемента к которому относиться -->
-                        <label for="inp-password">Пароль</label>
-                        <input id="inp-password" type="password" name="password" class="required" value="">
+                        <!-- комментарий: for должен быть равен id элемента к которому относиться 
+                        <label for="inp-password">Пароль</label>-->
+                        <input id="inp-password" type="password" name="password" class="required" placeholder="Пароль" value="">
+						<div class="errorHolder"></div>
                         <!---<a href="" title="" id="PasswordRecoveryLink"><span>Забыли пароль?</span></a> 00> -->
                     </div>
-                    <input type='checkbox' name="expirationTime"> Запомнить меня
-                    <input type="submit" name="" value="Войти">
+					<div>
+						<input id="remember-me" type='checkbox' name="expirationTime"><label for="remember-me">Запомнить меня</label>
+					</div>
+                    <input class="button" type="submit" name="" value="Войти">
                 </form>
             <? else : ?>
 
