@@ -35,7 +35,7 @@ h1 > span {display:block;width:100%;position:absolute;left:0;bottom:0;border-sty
 h2 {margin:0 0 10px 25px;font-size:24pt;}
 h4 {font-size:10.5pt;color:#474747;}
 
-h1, h2, h4, .news > a, .news .date, .button, #block-about p, .info-block > a, .info-block > span, #body404, #our-services .select a {font-family:"Minion Pro", sans-serif;}
+h1, h2, h4, .news > a, .button, #block-about p, .info-block > a, .info-block > span, #body404, #our-services .select a {font-family:"Minion Pro", sans-serif;}
 .input-text input {font-family:Tahoma, sans-serif;}
 #main-menu a {font-family:PTSerif, sans-serif;}
 
@@ -133,7 +133,7 @@ box-shadow:inset 0 1px 0 #b9b9b9;
 .news {width:680px;padding:0 0 0 75px;margin:0 0 40px 110px;overflow:hidden;position:relative;}
 .news a {border-bottom:dotted 1px #797979;text-decoration:none;font-style:italic;font-weight:bold;font-size:18pt;line-height:1.2;color:#333333;}
 .news p {margin:7px 0 0;line-height:1.6;}
-.news .date {width:50px;position:absolute;left:10px;top:7px;background:#f8f8f8;text-align:center;font-size:7.5pt;color:#a6a6a6;
+.news .date {width:50px;position:absolute;left:10px;top:7px;background:#f8f8f8;text-align:center;font-size:6.75pt;color:#a6a6a6;
 box-shadow:0 1px 2px #e2e2e2;
 -moz-box-box-shadow:0 1px 2px #e2e2e2;
 -webkit-box-shadow:0 1px 2px #e2e2e2;
