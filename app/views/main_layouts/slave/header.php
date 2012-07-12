@@ -17,14 +17,25 @@
         <? if (!empty($menu['top_left'])) : ?>
             <ul >
                 <? foreach ($menu['top_left'] as $item) : ?>
-                    <li><a href="<?= setMenuLink($item) ?>" title=""><?= $item->title ?></a></li>
+                    <?  $class = '';
+                        if ("/page/".$ActiveTemplate == $item->link) :
+                            $class = 'class="select"';
+                        endif;
+                    ?>
+
+                    <li <?= $class  ?> ><a href="<?= setMenuLink($item) ?>" title=""><?= $item->title ?></a></li>
                 <? endforeach ?>
             </ul>
         <? endif; ?>
         <? if (!empty($menu['top_middle'])) : ?>
             <ul >
                 <? foreach ($menu['top_middle'] as $item) : ?>
-                    <li><a href="<?= setMenuLink($item) ?>" title=""><?= $item->title ?></a></li>
+                    <?  $class = '';
+                        if ("/page/".$ActiveTemplate == $item->link) :
+                            $class = 'class="select"';
+                        endif;
+                    ?>
+                    <li <?= $class  ?>><a href="<?= setMenuLink($item) ?>" title=""><?= $item->title ?></a></li>
                 <? endforeach ?>
             </ul>
         <? endif; ?>
@@ -32,6 +43,7 @@
         <div></div>
         <div></div>
     </div>
+
 
     <? if (!empty($menu['top_right'])) : ?>
     <ul id="main-menu">
