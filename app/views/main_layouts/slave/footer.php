@@ -12,9 +12,9 @@
         <input type="submit" name="" value="">
     </form>
     <p id="made-by">
-        <span>Сделано в</span>
+        <span>Сайт сделан в</span>
         <a href="//incredibleart.ru/ru/portfolio" title=""><img src="img/incredible-2.png" title=""></a>
-        <a href="//incredibleart.ru/ru/portfolio" title="">Incredible Artstudio</a></p>
+        <a class="studio" href="//incredibleart.ru/ru/portfolio" title="">Incredible Artstudio</a><span>2012</span></p>
     <p></p>
     <div class="border"></div>
 </div>

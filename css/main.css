@@ -174,14 +174,19 @@ box-shadow:0 1px 2px #e2e2e2;
 #network > div {float:left;margin:0 0 0 -50%;position:relative;overflow:hidden;min-width:406px;}
 #network > div > div  {z-index:0;position:absolute;top:0;}
 #network > div > div:first-child {z-index:1;position:relative;}
+#nw-cnt {padding:19px 0 0 53px;}
 #nw-l, #nw-с, #nw-r {background:url(../img/bg-6.png) left top no-repeat;}
-#nw-l, #nw-r {width:38px;}
+#nw-l, #nw-r {width:39px;}
 #nw-l {left:0;background-position:left top;}
 #nw-с {left:50%;width:329px;margin:0 0 0 -165px;background-position:-38px top;}
 #nw-r {right:0;background-position:right top;}
 #nw-l1, #nw-r1 {background:url(../img/bg-7.png) left 3px repeat-x;}
 #nw-l1 {left:38px;right:50%;margin:0 165px 0 0;}
 #nw-r1 {left:50%;right:38px;margin:0 0 0 164px;}
+
+.addthis_button_facebook_like iframe {width:160px !important;}
+.addthis_button_tweet iframe {width:110px !important;}
+.addthis_button_vk span {margin-top:2px;}
 
 /* контакты */
 #contact p {width:570px;margin:0 auto;}
@@ -234,14 +239,16 @@ label[for="remember-me"] {color:#949494;}
 
 #footer form input[type="submit"] {width:15px;height:13px;z-index:2;position:absolute;left:9px;top:9px;background:url(../img/search-0.png) left top no-repeat;}
 
-#made-by {position:absolute;left:470px;top:190px;}
-#made-by:hover {left:410px;}
-#made-by:hover span, #made-by a, #made-by:hover span + a + a {display:block;height:30px;float:left;text-decoration:underline;font-size:8.25pt;color:#8f7474;}
+#made-by {position:absolute;left:450px;top:190px;}
+#made-by:hover {left:370px;}
+#made-by:hover span, #made-by a, #made-by:hover span + a + a {display:block;height:30px;float:left;font-size:8.25pt;color:#8f7474;}
 #made-by span, #made-by span + a + a {line-height:2.4;}
-#made-by span {display:none;width:60px;}
+#made-by a, #made-by:hover span + a + a {text-decoration:underline;}
+#made-by span {display:none;width:80px;}
 #made-by span + a {width:37px;overflow:hidden;}
 #made-by:hover span + a img {margin:-28px 0 0;}
 #made-by span + a + a {display:none;margin:0 0 0 5px;}
+#made-by a span {margin:0 0 0 5px;vertical-align:super;}
 
 #footer .border {width:315px;height:5px;position:absolute;left:342px;top:0;background:url(../img/footer-1.png) left top repeat-x;}
 

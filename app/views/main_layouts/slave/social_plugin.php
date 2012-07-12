@@ -21,7 +21,7 @@
 		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4db9b66e46487abf"></script>
 		<div id="nw-l"></div>
 		<div id="nw-l1"></div>
-		<div id="nw-ñ"></div>
+		<div id="nw-Ñ"></div>
 		<div id="nw-r1"></div>
 		<div id="nw-r"></div>
 	</div>

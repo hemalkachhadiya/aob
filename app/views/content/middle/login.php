@@ -35,11 +35,11 @@
     })
 </script>
 
-<div class="content" id="news-main">
+<div class="content" id="login-page">
     <? if (!$this->authmanager->isLogged()) : ?>
         <h1>Вход<span></span></h1>
     <? endif; ?>
-    <div class="login-form">
+    
         <? if (!$this->authmanager->isLogged()) : ?>
 
                 <form action="/main/login" method="POST" id="loginForm">
@@ -84,6 +84,6 @@
                     </p>
 
                 <? endif; ?>
-    </div>
+   
 
 </div>
