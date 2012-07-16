@@ -1,4 +1,4 @@
-<div class="content" id="article">
+<div class="content" id="admin">
         <h1>
                 <h1>Ссылки на главной</h1>
         </h1>
