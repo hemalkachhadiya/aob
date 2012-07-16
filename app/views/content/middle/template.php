@@ -5,12 +5,12 @@
         <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
         <?= validation_errors('<div class="error">','</div>') ?>
         <div>
-        <form method="post" action="<?= $_SERVER["REQUEST_URI"]; ?>" enctype="multipart/form-data">
+        <form id="edit-article" method="post" action="<?= $_SERVER["REQUEST_URI"]; ?>" enctype="multipart/form-data">
 
                     Линк : /page/<input type="text" value="<?= setFormValue('template',$TemplateData) ?>" name="template" style="width:100%">
 
                 <input type="hidden" value="<?= $TemplateData->id ?>" name="id" >
-                Заголовок :  <input name="title" value="<?= setFormValue('title',$TemplateData) ?>" style="width:100%">
+                Заголовок :  <input type="text" name="title" value="<?= setFormValue('title',$TemplateData) ?>" style="width:100%">
 
                 <textarea  cols="" name="body" class="ckeditor" >
 
@@ -37,11 +37,11 @@
 
 
                 <p>
-                    <input type="submit" value="сохранить">
+                    <input type="submit" value="сохранить"> <a href="/main/delete/<?= $TemplateData->id ?>?redirect=" style="color:red">удалить</a>
                 </p>
 
         </form>
-            <a href="/main/delete/<?= $TemplateData->id ?>?redirect=" style="color:red">удалить</a>
+           
         </div>
     <? else : ?>
 
