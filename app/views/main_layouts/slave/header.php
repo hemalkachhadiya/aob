@@ -1,14 +1,10 @@
 <? if ($this->authmanager->isAdmin() ) : ?>
-<div class="AdminBlock" >
-    <p>
-
-        <a href="/login">Пароль</a>
-        &nbsp;<a href="/pages">Статические страницы</a>
-        &nbsp;<a href="/menu">Меню</a>
-        &nbsp; <a class="LogoutLink" href="/main/logout">Выйти</a>
-    </p>
-
-</div>
+<ul class="AdminBlock">
+	<li><a href="/login">Пароль</a></li>
+	<li><a href="/pages">Статические страницы</a></li>
+	<li><a href="/menu">Меню</a></li>
+	<li><a class="LogoutLink" href="/main/logout">Выйти</a></li>
+</ul>
 <? endif; ?>
 
 <div id="header">
