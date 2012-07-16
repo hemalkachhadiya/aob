@@ -23,6 +23,16 @@ class Main extends CI_Controller
         $this->LayoutModel->editMenu();
         redirect('menu');
     }
+    public function addMenu($typeId){
+        $this->load->model('LayoutModel');
+        $this->LayoutModel->add($typeId);
+        redirect('menu');
+    }
+    public function deleteMenu($id){
+        $this->load->model('LayoutModel');
+        $this->LayoutModel->delete($id);
+        redirect('menu');
+    }
     /*
     public function index()
     {
