@@ -174,14 +174,17 @@ box-shadow:0 1px 2px #e2e2e2;
 #admin h2 {line-height:1;font-size:18pt;color:#575656;text-decoration:underline;text-shadow:none;font-weight:normal;letter-spacing:0;}
 #edit-article input[type="text"] {margin:5px 0 7px;}
 #edit-article p {margin:0 0 0 10px !important;}
+#edit-article input[type="submit"] {text-decoration:underline;}
 
 .AdminBlock {z-index:20;position:absolute;left:50% !important;top:10px !important;margin:0 0 0 117px;}
 .AdminBlock li {float:left;margin:0 0 0 10px;}
 .AdminBlock li:first-child {margin:0;}
-.AdminBlock a {color:#3a427b;}
-.AdminBlock a:hover {color:#1b2253;}
+.AdminBlock a, #edit-article input[type="submit"] {color:#3a427b;}
+.AdminBlock a:hover, #edit-article input[type="submit"]:hover {color:#1b2253;}
 .AdminBlock .LogoutLink {margin:0 0 0 25px;color:#bf3c3c;}
 .AdminBlock .LogoutLink:hover {color:#7e1515;}
+
+.add-content {float:right;margin:30px 32px 0 0;}
 
 
 /* соц сети */
