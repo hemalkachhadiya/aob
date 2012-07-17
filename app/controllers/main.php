@@ -369,13 +369,24 @@ class Main extends CI_Controller
 
         $this->layoutmanager->getSimpleTemplate($ConfigData,$data);
     }
+
     public function getAjaxNewsList(){
         $page = $this->input->post('page');
         $type = $this->input->post('ItemType');
         $data = array(
             'list'      =>  $this->PageManager->get($type,$page),
             'isMore'    =>  $this->PageManager->get($type,++$page)
+
         );
+        foreach ($data['list'] as $entity) :
+            $entity->TitleStructure = '<a href="'.$entity->link.'" title="">'.$entity->title.'</a>';
+            if ($this->authmanager->isAdmin()) :
+                $entity->TitleStructure .=  " <a  class='EditLink' href='/page?id={$entity->id}'>редактировать</a>"
+                                        ." <a class='DeleteLink' href='/main/delete/{$entity->id}?redirect={$entity->typeName}'>удалить</a>";
+            endif;
+        endforeach;
+
+
         echo json_encode($data);
     }
 

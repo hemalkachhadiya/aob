@@ -41,7 +41,7 @@ $(document).ready(function(){
     function getTemplate(entity){
 
         var template = '<div class="news">'
-                            +'<a href="'+entity.link+'" title="">'+entity.title+'</a>'
+                            +entity.TitleStructure
                             +'<p>'+entity.shortBody+'</p>'
                             +'<span class="date">'+entity.createTime+'</span>'
                         +'</div>';
