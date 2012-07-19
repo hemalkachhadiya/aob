@@ -179,12 +179,17 @@ box-shadow:0 1px 2px #e2e2e2;
 .AdminBlock {z-index:20;position:absolute;left:50% !important;top:10px !important;margin:0 0 0 117px;}
 .AdminBlock li {float:left;margin:0 0 0 10px;}
 .AdminBlock li:first-child {margin:0;}
-.AdminBlock a, #edit-article input[type="submit"] {color:#3a427b;}
+.AdminBlock a, #edit-article input[type="submit"], .content .EditLink {color:#3a427b;}
 .AdminBlock a:hover, #edit-article input[type="submit"]:hover {color:#1b2253;}
-.AdminBlock .LogoutLink {margin:0 0 0 25px;color:#bf3c3c;}
+.AdminBlock .LogoutLink, .content .DeleteLink {color:#bf3c3c;}
+.AdminBlock .LogoutLink {margin:0 0 0 25px;}
 .AdminBlock .LogoutLink:hover {color:#7e1515;}
 
 .add-content {float:right;margin:30px 32px 0 0;}
+
+.content .EditLink, .content .DeleteLink {font-size:10.5pt;font-family:Arial, sans-serif;font-style:normal;font-weight: normal;text-decoration:underline;border:0;}
+.content .EditLink:hover {color:#0C123A !important;}
+.content .DeleteLink:hover {color:#991F1F !important;}
 
 
 /* соц сети */
